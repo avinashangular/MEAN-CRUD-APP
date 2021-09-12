@@ -1,0 +1,25 @@
+<h3>Employees <button type="button" routerLink="/employee" class="btn btn-primary">+</button></h3>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Address</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of dataList; let i = index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{row.name}}</td>
+        <td>{{row.age}}</td>
+        <td>{{row.phone}}</td>
+        <td>{{row.address}}</td>
+        <td>
+          <button (click)="editEmployee(row)" type="button" class="btn btn-primary btn-sm">Edit</button> 
+          <button (click)="deleteEmployee(row._id)" type="button" style="margin-left:15px" class="btn btn-danger btn-sm">Delete</button></td>
+      </tr>      
+    </tbody>
+  </table>

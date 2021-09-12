@@ -1,0 +1,59 @@
+<form [formGroup]="employeeForm" class="was-validated">
+<h3>Employee</h3>
+<div class="mb-3">
+  <label for="formGroupExampleInput" class="form-label">Name</label>
+  <input
+    type="text"
+    class="form-control"
+    id="formGroupExampleInput"    
+    formControlName="name"
+    placeholder="Enter employee name"
+    required
+  />
+  <div class="invalid-feedback">Please enter employee name.</div>
+</div>
+<div class="mb-3">
+  <label for="formGroupExampleInput2" class="form-label">Age</label>
+  <input
+    type="text"
+    class="form-control"
+    id="formGroupExampleInput2"
+    formControlName="age"
+    placeholder="Enter employee age"
+    required
+  />
+  <div class="invalid-feedback">Please enter employee age.</div>
+</div>
+<div class="mb-3">
+  <label for="formGroupExampleInput3" class="form-label">Phone</label>
+  <input
+    type="text"
+    class="form-control"
+    id="formGroupExampleInput3"
+    formControlName="phone"
+    placeholder="Enter employee phone"
+    required
+  />
+  <div class="invalid-feedback">Please enter employee phone.</div>
+</div>
+<div class="mb-3">
+  <label for="formGroupExampleInput4" class="form-label">Address</label>
+  <input
+    type="text"
+    class="form-control"
+    id="formGroupExampleInput4"
+    formControlName="address"
+    placeholder="Enter employee address"
+    required
+  />
+  <div class="invalid-feedback">Please enter employee address.</div>
+</div>
+<div class="mb-3">
+  <button *ngIf="!empService.employeeData" type="button" class="btn btn-primary" (click)="addEmployee()">
+    Save
+  </button>
+  <button *ngIf="empService.employeeData" type="button" class="btn btn-primary" (click)="updateEmployee()">
+    Update
+  </button>
+</div>
+</form>
